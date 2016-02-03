@@ -76,7 +76,7 @@ group :development, :test do
   gem 'jasmine'
   gem 'jasmine-rails'
   gem 'mailcatcher'
-  gem 'did_you_mean', '0.10.0'
+  gem 'did_you_mean'
   gem 'guard-livereload', require: false
 end
 group :development do

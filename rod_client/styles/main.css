@@ -6,7 +6,14 @@
 }
 
 body {
-  padding: 0;
+
+  padding: 1%;
+  background-image: url('/images/fishing.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;  
+  overflow:scroll;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

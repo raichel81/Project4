@@ -8,13 +8,13 @@
  * Controller of the rodBrokerApp
  */
 angular.module('rodBrokerApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  })
+.controller('MainCtrl', function($scope, $location) {
+  $scope.currentPath = $location.path();
+  $scope.isActive = function (viewLocation) { 
+      return viewLocation === $location.path();
+  };
+});
+
 
 
 // /////

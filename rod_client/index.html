@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
   <head>
-   <base href="/">
+    <base href="/">
     <meta charset="utf-8">
-    <title></title>
+    <title>Rod Broker</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -25,9 +25,12 @@
 
     <div class="container">
     <!-- ///// created partial for navbar -->
-     <div ng-include="'views/navbar.html'"></div>
+      <div ng-include="'views/navbar.html'"></div>
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" dismiss-on-timeout="5000">
+        {{alert.msg}}
+      </uib-alert>
     <!-- ///// -->
-    <div ng-view=""></div>
+      <div ng-view=""></div>
     </div>
 
     <div class="footer">

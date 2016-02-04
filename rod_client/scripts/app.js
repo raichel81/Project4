@@ -14,16 +14,16 @@ var app = angular.module('rodBrokerApp', [
   'ngResource',
   'ngRoute',
   'ngSanitize',
-  'ngTouch',
-  'Devise'
+  'ngTouch'
+  // 'Devise'
 ])
 
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
-    })
+      controller: 'HomeCtrl'
+     })
     .when('/about', {
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl'
@@ -39,20 +39,23 @@ app.config(function ($routeProvider) {
     .otherwise({
       redirectTo: '/'
     });
-});
- 
+})
+  //  .run(['$rootScope', '$location', function($rootScope, $location) {
+  // $rootScope.currentPath = function() {
+  //   return $location;
+  // }}])
 app.factory('Group', ['$resource', function($resource) {
   return $resource('http://localhost:3000/api/groups/:id.json', null, {
     // 'update': { method:'PUT' }
-  });
+  })
 }]);
 
-app.config(function(AuthProvider) {
-  console.log(AuthProvider);
+// app.config(function(AuthProvider) {
+  // console.log(AuthProvider);
   // AuthProvider.loginPath('/users/sign_in');
   // AuthProvider.loginMethod('POST');
   // AuthProvider.resourceName('user');
-});
+// });
 
  /////////////////////////// 
 
@@ -89,7 +92,8 @@ app.config(function(AuthProvider) {
 // }])
 // .config(['$httpProvider', function($httpProvider) {
 //   $httpProvider.interceptors.push('AuthInterceptor');
-// }]).run(['$rootScope', 'Auth', function($rootScope, Auth) {
+// }])
+// .run(['$rootScope', 'Auth', function($rootScope, Auth) {
 //   $rootScope.isLoggedIn = function() {
 //     return Auth.isLoggedIn.apply(Auth);
 //   }

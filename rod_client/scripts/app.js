@@ -28,6 +28,22 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl'
     })
+    .when('/builders', {
+      templateUrl: 'views/builders.html',
+      controller: 'BuildersCtrl'
+    })
+    .when('/contact', {
+      templateUrl: 'views/contact.html',
+      controller: 'ContactCtrl'
+    })
+    .when('/newBuilder', {
+      templateUrl: 'views/newBuilder.html',
+      controller: 'NewBuilderCtrl'
+    })
+    .when('/results', {
+      templateUrl: 'views/results.html',
+      controller: 'ResultsCtrl'
+    })
     .when('/groups', {
       templateUrl: 'views/groups.html',
       controller: 'GroupsCtrl'
@@ -36,8 +52,12 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/userSignup.html',
       controller: 'SignupCtrl'
     })
+    .when('/showBuilder', {
+      templateUrl: 'views/showBuilder.html',
+      controller: 'ShowBuilderCtrl'
+    })
     .otherwise({
-      redirectTo: '/'
+      templateUrl:  '/404.html'
     });
 })
   //  .run(['$rootScope', '$location', function($rootScope, $location) {
@@ -51,10 +71,12 @@ app.factory('Group', ['$resource', function($resource) {
 }]);
 
 // app.config(function(AuthProvider) {
+
   // console.log(AuthProvider);
   // AuthProvider.loginPath('/users/sign_in');
   // AuthProvider.loginMethod('POST');
   // AuthProvider.resourceName('user');
+
 // });
 
  /////////////////////////// 

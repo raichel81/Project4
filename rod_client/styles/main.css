@@ -7,6 +7,8 @@
 
 body {
   padding: 0;
+  background-image: url('/images/fishing.jpg');
+  background-size : cover;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

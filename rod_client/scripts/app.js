@@ -9,19 +9,19 @@
  * Main module of the application.
  */
 var app = angular.module('rodBrokerApp', [
+  'Devise',
   'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngRoute',
   'ngSanitize',
   'ngTouch'
-  // 'Devise'
-])
+]);
 
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'views/main.html',
+      templateUrl: 'views/home.html',
       controller: 'HomeCtrl'
      })
     .when('/about', {
@@ -49,8 +49,12 @@ app.config(function ($routeProvider) {
       controller: 'GroupsCtrl'
     })
     .when('/signup', {
-      templateUrl: 'views/userSignup.html',
+      templateUrl: 'views/signup.html',
       controller: 'SignupCtrl'
+    })
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl'
     })
     .when('/showBuilder', {
       templateUrl: 'views/showBuilder.html',
@@ -59,7 +63,21 @@ app.config(function ($routeProvider) {
     .otherwise({
       templateUrl:  '/404.html'
     });
-})
+});
+
+app.controller('LoginCtrl', function (Auth) {
+  Auth.currentUser().then(function(user) {
+    debugger;
+    // User was logged in, or Devise returned
+    // previously authenticated session.
+    console.log(user); // => {id: 1, ect: '...'}
+  }, function(error) {
+    // unauthenticated error
+  });
+});
+    // controller('myCtrl', function(Auth) {
+    //     // Use your configured Auth service.
+    // });
   //  .run(['$rootScope', '$location', function($rootScope, $location) {
   // $rootScope.currentPath = function() {
   //   return $location;

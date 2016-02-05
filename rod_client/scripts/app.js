@@ -32,13 +32,9 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/builders.html',
       controller: 'BuildersCtrl'
     })
-    .when('/contact', {
-      templateUrl: 'views/contact.html',
-      controller: 'ContactCtrl'
-    })
-    .when('/newBuilder', {
-      templateUrl: 'views/newBuilder.html',
-      controller: 'NewBuilderCtrl'
+    .when('/new', {
+      templateUrl: 'views/new.html',
+      controller: 'NewCtrl'
     })
     .when('/results', {
       templateUrl: 'views/results.html',
@@ -56,9 +52,9 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl'
     })
-    .when('/showBuilder', {
-      templateUrl: 'views/showBuilder.html',
-      controller: 'ShowBuilderCtrl'
+    .when('/show', {
+      templateUrl: 'views/show.html',
+      controller: 'ShowCtrl'
     })
     .otherwise({
       templateUrl:  '/404.html'
@@ -78,10 +74,8 @@ app.controller('LoginCtrl', function (Auth) {
     // controller('myCtrl', function(Auth) {
     //     // Use your configured Auth service.
     // });
-  //  .run(['$rootScope', '$location', function($rootScope, $location) {
-  // $rootScope.currentPath = function() {
-  //   return $location;
-  // }}])
+
+
 app.factory('Group', ['$resource', function($resource) {
   return $resource('http://localhost:3000/api/groups/:id.json', null, {
     // 'update': { method:'PUT' }

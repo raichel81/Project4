@@ -14,6 +14,32 @@ body {
   background-size: cover;
   background-color: #464646;  
   overflow:scroll;
+  font-family:'Raleway', sans-serif;
+  font-weight: 600;
+}
+.brand {
+  height: 300%;
+/*  padding-bottom: 10px;*/
+}
+
+.welcome {
+  border: solid black 1px;
+  text-align: justify;
+  padding: 2%;
+}
+
+.footer {
+  width: 100%;
+}
+footer {
+  text-align: center;
+  font-size: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 30%;
+  padding: 1% !important;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -39,7 +65,6 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }

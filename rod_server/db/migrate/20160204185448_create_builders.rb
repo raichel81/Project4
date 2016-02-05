@@ -5,7 +5,6 @@ class CreateBuilders < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.string :bio
-      t.string :shipping
 
       t.timestamps null: false
     end

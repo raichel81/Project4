@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Builder:</strong>
+  <%= @builder.name %>
+  <%= @builder.email %>
+  <%= @builder.phone %>
+  <%= @builder.bio %>
+</p>
+
+<%= link_to 'Edit', edit_builder_path(@builder) %> |
+<%= link_to 'Back', builders_path %>

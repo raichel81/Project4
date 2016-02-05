@@ -1,6 +1,10 @@
 'use strict';
  
 angular.module('rodBrokerApp')
-  .controller('ShowBuilderCtrl', ['$scope', 'ShowBuilder', function ($scope, ShowBuilder) {
-    $scope.showBuilder = ShowBuilder.query();
+  .controller('ShowBuilderCtrl', ['$scope', function ($scope) {
+    // $scope.showBuilder = ShowBuilder.query();
+    $scope.builder = {
+      photo: "some image",
+      description: "Stuff about a builder"
+    };
   }]);

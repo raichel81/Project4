@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -64,33 +65,15 @@ gem 'font-awesome-rails'
 group :development, :test do
   gem 'quiet_assets'
   gem 'faker' # https://github.com/stympy/faker
-  gem 'factory_girl_rails' # https://github.com/thoughtbot/factory_girl_rails
-  gem 'database_cleaner'
-  gem 'rspec'
-  gem 'rspec-rails' # https://github.com/rspec/rspec-rails
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'shoulda-matchers' # https://github.com/thoughtbot/shoulda-matchers
-  gem 'shoulda-callback-matchers', '~> 1.0'
-  gem 'spring-commands-rspec'
-  gem 'jasmine'
-  gem 'jasmine-rails'
   gem 'mailcatcher'
-  gem 'did_you_mean'
-  gem 'guard-livereload', require: false
+
 end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'meta_request'
-end
-group :test do
-  gem 'airborne' # api test
-end
 
-# grape api
-gem 'grape-entity'
-gem 'grape'
+end
 
 gem 'rack-cors', :require => 'rack/cors'
 

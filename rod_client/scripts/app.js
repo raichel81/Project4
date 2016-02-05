@@ -9,19 +9,19 @@
  * Main module of the application.
  */
 var app = angular.module('rodBrokerApp', [
+  'Devise',
   'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngRoute',
   'ngSanitize',
   'ngTouch'
-  // 'Devise'
-])
+]);
 
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'views/main.html',
+      templateUrl: 'views/home.html',
       controller: 'HomeCtrl'
      })
     .when('/about', {
@@ -32,13 +32,9 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/builders.html',
       controller: 'BuildersCtrl'
     })
-    .when('/contact', {
-      templateUrl: 'views/contact.html',
-      controller: 'ContactCtrl'
-    })
-    .when('/newBuilder', {
-      templateUrl: 'views/newBuilder.html',
-      controller: 'NewBuilderCtrl'
+    .when('/new', {
+      templateUrl: 'views/new.html',
+      controller: 'NewCtrl'
     })
     .when('/results', {
       templateUrl: 'views/results.html',
@@ -49,21 +45,37 @@ app.config(function ($routeProvider) {
       controller: 'GroupsCtrl'
     })
     .when('/signup', {
-      templateUrl: 'views/userSignup.html',
+      templateUrl: 'views/signup.html',
       controller: 'SignupCtrl'
     })
-    .when('/showBuilder', {
-      templateUrl: 'views/showBuilder.html',
-      controller: 'ShowBuilderCtrl'
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl'
+    })
+    .when('/show', {
+      templateUrl: 'views/show.html',
+      controller: 'ShowCtrl'
     })
     .otherwise({
       templateUrl:  '/404.html'
     });
-})
-  //  .run(['$rootScope', '$location', function($rootScope, $location) {
-  // $rootScope.currentPath = function() {
-  //   return $location;
-  // }}])
+});
+
+app.controller('LoginCtrl', function (Auth) {
+  Auth.currentUser().then(function(user) {
+    debugger;
+    // User was logged in, or Devise returned
+    // previously authenticated session.
+    console.log(user); // => {id: 1, ect: '...'}
+  }, function(error) {
+    // unauthenticated error
+  });
+});
+    // controller('myCtrl', function(Auth) {
+    //     // Use your configured Auth service.
+    // });
+
+
 app.factory('Group', ['$resource', function($resource) {
   return $resource('http://localhost:3000/api/groups/:id.json', null, {
     // 'update': { method:'PUT' }

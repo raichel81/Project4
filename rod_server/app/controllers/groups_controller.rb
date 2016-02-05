@@ -5,8 +5,11 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    # respond_to do |format|
+    #   format.json { render json: @groups.as_json }
+    # end
   end
-
+# update model with data (post), push data into model
   # GET /groups/1
   # GET /groups/1.json
   def show

@@ -1,4 +1,4 @@
-<section id="newBuilder" class="new-section">
+<section id="newBuilder" class="newBuilder-section">
     <div class="well">    
       <h2>Builder sign up form</h2>
      <form ng-submit="builderSignup()">
@@ -20,7 +20,32 @@
         <input type="phone" class="form-control" id="phone" placeholder="555-555-5555" ng-model="user.phone">
       </div>
 
-      <button type="submit" class="btn btn-primary">Signup</button>
+     
     </form>
-  </div>
+     <form ng-submit="rodSignup()">
+      <div class="form-group">
+        <label for="name">Species</label>
+        <input type="name" class="form-control" id="name" placeholder="eg Dick Rodman" ng-model="user.name">
+      </div>
+      <div class="form-group">
+        <label for="address">Types of Rods</label>
+        <input type="address" class="form-control" id="address" placeholder="1234 Rod Way Seattle, WA 98122" ng-model="user.address">
+      </div>
+      <div class="form-group">
+        <label for="email">Blank Used</label>
+        <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email">
+      </div>
+      <div class="form-group">
+        <label for="description">Builder Profile Description</label>
+        <input type="text" class="form-control" id="description" placeholder="i.e. “I was a wee little lad when I built my first rod”" ng-model="user.description">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Signup</button>  <button type="submit" class="btn btn-warning">Edit</button>
+
+    </form>
+
 </section>
+</div>
+<!-- 
+/////These need to be nested - going into two tables - below form needs to have checkbox dropdown to select species, rod and blank types -->
+

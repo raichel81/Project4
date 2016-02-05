@@ -2,7 +2,6 @@ FactoryGirl.define do
   factory :pole do
     name "MyString"
     rodmodel "MyString"
-    picture "MyString"
     type ""
     length ""
     pieces ""
@@ -10,5 +9,6 @@ FactoryGirl.define do
     lineweight ""
     pricerange ""
     power "MyString"
+    species "MyString"
   end
 end

@@ -2,7 +2,7 @@
  
 
 angular.module('rodBrokerApp')
-  .controller('ResultsCtrl' ['$scope', 'Builder', function ($scope, Builder) {
+  .controller('ResultsCtrl', ['$scope', 'Builder', function ($scope, Builder) {
     $scope.builders = Builder.query();
 
   }]);

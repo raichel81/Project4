@@ -1,7 +1,7 @@
 'use strict';
  
 angular.module('rodBrokerApp')
-.controller('NewCtrl', ['$scope', '$location', 'Builder', 'Post', 'Auth', function($scope, $location, Builder, Post, Auth) {
+.controller('NewCtrl', ['$scope', '$location', 'Builder', 'Auth', function($scope, $location, Builder, Auth) {
   if (!Auth.isLoggedIn()) {
     console.log('DENY');
     $location.path('/login');
@@ -14,11 +14,7 @@ angular.module('rodBrokerApp')
     username: Auth.currentUser().username
   };
 
-  $scope.pole = {
-    title: '',
-    body: '',
-    username: Auth.currentUser().username
-  };
+  
 
   $scope.createBuilder = function() {
     Builder.save($scope.builder, function success(data) {

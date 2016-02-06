@@ -18,7 +18,8 @@ var app = angular.module('rodBrokerApp', [
   'ngTouch'
 ]);
 
-app.config(function ($routeProvider) {
+app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+  $httpProvider.defaults.withCredentials = true;
   $routeProvider
     .when('/', {
       templateUrl: 'views/home.html',
@@ -59,7 +60,7 @@ app.config(function ($routeProvider) {
     .otherwise({
       templateUrl:  '/404.html'
     });
-});
+}]);
 
 app.controller('LoginCtrl', function (Auth) {
   Auth.currentUser().then(function(user) {
@@ -92,15 +93,16 @@ app.factory('Pole', ['$resource', function($resource) {
   })
 }]);
 
+app.config(function(AuthProvider) {
+        AuthProvider.registerPath('http://localhost:3000/api/users.json');
 
-// app.config(function(AuthProvider) {
 
-  // console.log(AuthProvider);
+  console.log(AuthProvider);
   // AuthProvider.loginPath('/users/sign_in');
   // AuthProvider.loginMethod('POST');
   // AuthProvider.resourceName('user');
 
-// });
+});
 
 
 //   $locationProvider.html5Mode(true);

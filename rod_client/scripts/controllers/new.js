@@ -9,16 +9,20 @@ angular.module('rodBrokerApp')
   }
 
   $scope.builder = {
-    title: '',
-    body: '',
+    name: '',
+    email: '',
+    phone: '',
+    bio: '',    
+    location: '',
+    minprice: '',    
+    maxprice: '',
+    ship: '',    
+    rodtype: '',   
+    species: '',
+    poleblank: '',
     username: Auth.currentUser().username
   };
 
-  $scope.pole = {
-    title: '',
-    body: '',
-    username: Auth.currentUser().username
-  };
 
   $scope.createBuilder = function() {
     Builder.save($scope.builder, function success(data) {

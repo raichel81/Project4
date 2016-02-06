@@ -18,7 +18,13 @@ ActiveRecord::Schema.define(version: 20160204190704) do
     t.string   "email"
     t.string   "phone"
     t.string   "bio"
-    t.string   "shipping"
+    t.string   "location"
+    t.float    "minprice"
+    t.float    "maxprice"
+    t.boolean  "ship"
+    t.string   "rodtype"
+    t.string   "species"
+    t.string   "poleblank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

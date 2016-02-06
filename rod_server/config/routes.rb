@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     devise_for :users
     resources :groups
     resources :builders
-    resources :poles
   end
 
 end

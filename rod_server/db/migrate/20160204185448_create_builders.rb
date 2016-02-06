@@ -5,6 +5,13 @@ class CreateBuilders < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.string :bio
+      t.string :location
+      t.float :minprice
+      t.float :maxprice
+      t.boolean :ship
+      t.string :rodtype
+      t.string :species
+      t.string :poleblank
 
       t.timestamps null: false
     end

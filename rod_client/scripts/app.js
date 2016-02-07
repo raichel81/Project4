@@ -63,20 +63,6 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
     });
 }]);
 
-app.controller('LoginCtrl', function (Auth) {
-  Auth.currentUser().then(function(user) {
-    debugger;
-    // User was logged in, or Devise returned
-    // previously authenticated session.
-    console.log(user); // => {id: 1, ect: '...'}
-  }, function(error) {
-    // unauthenticated error
-  });
-});
-    // controller('myCtrl', function(Auth) {
-    //     // Use your configured Auth service.
-    // });
-
 
 app.factory('Group', ['$resource', function($resource) {
   return $resource('http://localhost:3000/api/groups/:id.json', null, {
@@ -95,14 +81,8 @@ app.factory('Pole', ['$resource', function($resource) {
 }]);
 
 app.config(function(AuthProvider) {
-        AuthProvider.registerPath('http://localhost:3000/api/users.json');
-
-
-  console.log(AuthProvider);
-  // AuthProvider.loginPath('/users/sign_in');
-  // AuthProvider.loginMethod('POST');
-  // AuthProvider.resourceName('user');
-
+  AuthProvider.registerPath('http://localhost:3000/api/users.json');
+  AuthProvider.loginPath('http://localhost:3000/api/users/sign_in.json');
 });
 
 

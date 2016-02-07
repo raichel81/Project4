@@ -11,7 +11,17 @@
 
    <div class='col-sm-6 col-md-6 col-lg-8'>
       <div class="well">
-        {{builder.description}}
+        <p>{{builder.name}}</p>
+        <p>Biography: {{builder.bio}}
+        <ul>Contact info
+          <li>Email: {{builder.email}}</li>
+          <li>Phone: {{builder.phone}}</li>
+          <li>Location: {{builder.location}}</li>
+        </ul>
+        <ul>Rod info
+          <li>Types of rods built: {{builder.rodtype}}</li>
+          <li>Rods built for species: {{builder.species}}</li>
+          <li>Pole blank brands used: {{builder.poleblank}}</li>
       </div>
    </div>
        

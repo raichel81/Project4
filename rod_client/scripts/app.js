@@ -54,7 +54,7 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl'
     })
-    .when('/show', {
+    .when('/builders/:builderId', {
       templateUrl: 'views/show.html',
       controller: 'ShowCtrl'
     })

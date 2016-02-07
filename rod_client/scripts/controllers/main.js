@@ -8,12 +8,33 @@
  * Controller of the rodBrokerApp
  */
 angular.module('rodBrokerApp')
-.controller('MainCtrl', function($scope, $location) {
+.controller('MainCtrl', ['$scope', '$location', 'Auth', function($scope, $location, Auth) {
   $scope.currentPath = $location.path();
+
   $scope.isActive = function (viewLocation) { 
       return viewLocation === $location.path();
   };
-});
+
+  $scope.logout = function() {
+    Auth.logout().then(function(oldUser) {
+      $location.path('/');
+    }, function(error) {
+      // An error occurred logging out.
+    });
+  };
+
+  $scope.$on('devise:new-session', function(event, currentUser) {
+    setCurrentUser(currentUser);
+  });
+
+  $scope.$on('devise:new-registration', function(event, user) {
+    setCurrentUser(user);
+  });
+
+  function setCurrentUser(user) {
+    $scope.currentUser = user;
+  }
+}]);
 
 
 
@@ -83,23 +104,6 @@ angular.module('rodBrokerApp')
 //   }
 // }])
 
-// .controller('SignupCtrl', ['$scope', '$http', '$location', 'Alerts', 'Auth', function($scope, $http, $location, Alerts, Auth){
-//   $scope.user = {
-//     email: '',
-//     password: '',
-//     username: ''
-//   };
-
-//   $scope.userSignup = function() {
-//     $http.post('api/users', $scope.user).then(function success(res) {
-//       Alerts.add('success', 'User Created!');
-//       Auth.saveUser(res.data.user);
-//       $location.path('/');
-//     }, function error(res) {
-//       console.log(res);
-//     })
-//   }
-// }])
 
 // .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth){
 //   $scope.user = {

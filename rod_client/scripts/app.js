@@ -63,7 +63,6 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
     });
 }]);
 
-
 app.factory('Group', ['$resource', function($resource) {
   return $resource('http://localhost:3000/api/groups/:id.json', null, {
     // 'update': { method:'PUT' }
@@ -83,16 +82,17 @@ app.factory('Pole', ['$resource', function($resource) {
 app.config(function(AuthProvider) {
   AuthProvider.registerPath('http://localhost:3000/api/users.json');
   AuthProvider.loginPath('http://localhost:3000/api/users/sign_in.json');
+  // AuthProvider.logoutPath('http://localhost:3000/api/users/sign_out.json');
+  AuthProvider.logoutPath('http://localhost:3000/api/users/sign_out_post.json');
+  AuthProvider.logoutMethod('POST');
 });
 
 
-//   $locationProvider.html5Mode(true);
-// }])
 // .config(['$httpProvider', function($httpProvider) {
 //   $httpProvider.interceptors.push('AuthInterceptor');
 // }])
-// .run(['$rootScope', 'Auth', function($rootScope, Auth) {
-//   $rootScope.isLoggedIn = function() {
-//     return Auth.isLoggedIn.apply(Auth);
-//   }
-// }]);
+app.run(['$rootScope', 'Auth', function($rootScope, Auth) {
+  $rootScope.isLoggedIn = function() {
+    return Auth.isAuthenticated();
+  }
+}]);

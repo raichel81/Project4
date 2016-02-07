@@ -27,10 +27,10 @@
       <div> 
         <ul class="nav navbar-nav navbar-right">
           <li>
-                <p id="userName" class="navbar-text" ng-show="isLoggedIn()">
-                  Signed in as <span>{{current_user.username}}</span>
-                </p>
-              </li>
+            <p id="userName" class="navbar-text" ng-show="isLoggedIn()">
+              Welcome, <span>{{currentUser.username}}</span>
+            </p>
+          </li>
           <li ng-class="{ active: isActive('/signup')}"><a href="#/signup" ng-hide="isLoggedIn()">Signup</a></li>
           <li ng-class="{ active: isActive('/login')}"><a href="#/login" ng-hide="isLoggedIn()">Login</a></li>
           <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>

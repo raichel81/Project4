@@ -16,7 +16,8 @@ var app = angular.module('rodBrokerApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'checklist-model'
 ]);
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {

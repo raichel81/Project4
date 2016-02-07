@@ -19,6 +19,8 @@ body {
 }
 .brand {
   height: 300%;
+  margin-right: -106px;
+  margin-top: -16px;
 /*  padding-bottom: 10px;*/
 }
 
@@ -30,6 +32,7 @@ body {
 
 .footer {
   width: 100%;
+  padding-top: 60px;
 }
 footer {
   text-align: center;
@@ -37,9 +40,10 @@ footer {
   position: fixed;
   bottom: 0;
   width: 30%;
-  padding: 1% !important;
+  padding: 0% !important;
   margin-left: 30%;
   margin-right: 30%;
+  clear: both;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

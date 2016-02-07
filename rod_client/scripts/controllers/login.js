@@ -3,16 +3,17 @@ angular.module('rodBrokerApp')
   .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth){
   $scope.user = {
     email: '',
-    password: '',
-    username: ''
+    password: ''
   };
 
   $scope.login = function() {
-    $http.post('/api/auth', $scope.user).then(function success(res) {
-     Auth.saveUser(res.data.user);
-     $location.path('/');
-    }, function error(res) {
-      console.log(res);
-    })
+
+        Auth.login($scope.user).then(function(user) {
+          $location.path('/');
+console.log(user); // => {id: 1, ect: '...'}
+        }, function(error) {
+            // Authentication failed...
+        });
   }
 }]);
+

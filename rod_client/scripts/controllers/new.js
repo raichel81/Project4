@@ -2,17 +2,11 @@
  
 angular.module('rodBrokerApp')
 .controller('NewCtrl', ['$scope', '$location', 'Builder', 'Auth', function($scope, $location, Builder, Auth) {
-  // if (!Auth.isLoggedIn()) {
-  //   console.log('DENY');
-  //   $location.path('/login');
-  //   return;
-  // }
-
-  // $scope.builder = {
-  //   title: '',
-  //   body: '',
-  //   username: Auth.currentUser().username
-  // };
+  if (!Auth.isAuthenticated()) {
+    console.log('DENY');
+    $location.path('/login');
+    return;
+  }
 
   $scope.createBuilder = function() {
     Builder.save($scope.builder, function success(data) {

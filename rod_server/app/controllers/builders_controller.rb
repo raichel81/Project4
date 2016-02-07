@@ -28,6 +28,7 @@ class BuildersController < ApplicationController
   # POST /groups.json
   def create
     @builder = Builder.new(builder_params)
+    @builder.user = current_user
 
     respond_to do |format|
       if @builder.save

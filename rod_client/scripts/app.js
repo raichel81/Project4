@@ -20,6 +20,8 @@ var app = angular.module('rodBrokerApp', [
   'checklist-model'
 ]);
 
+const apiEndpoint = "https://rod-broker-server.herokuapp.com/api";
+
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
   $httpProvider.defaults.withCredentials = true;
   $routeProvider
@@ -70,26 +72,26 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
 }]);
 
 app.factory('Group', ['$resource', function($resource) {
-  return $resource('http://localhost:3000/api/groups/:id.json', null, {
+  return $resource(apiEndpoint + '/groups/:id.json', null, {
     // 'update': { method:'PUT' }
   })
 }]);
 app.factory('Builder', ['$resource', function($resource) {
-  return $resource('http://localhost:3000/api/builders/:id.json', null, {
+  return $resource(apiEndpoint + '/builders/:id.json', null, {
     // 'update': { method:'PUT' }
   })
 }]);
 app.factory('Pole', ['$resource', function($resource) {
-  return $resource('http://localhost:3000/api/poles/:id.json', null, {
+  return $resource(apiEndpoint + '/poles/:id.json', null, {
     // 'update': { method:'PUT' }
   })
 }]);
 
 app.config(function(AuthProvider) {
-  AuthProvider.registerPath('http://localhost:3000/api/users.json');
-  AuthProvider.loginPath('http://localhost:3000/api/users/sign_in.json');
-  // AuthProvider.logoutPath('http://localhost:3000/api/users/sign_out.json');
-  AuthProvider.logoutPath('http://localhost:3000/api/users/sign_out_post.json');
+  AuthProvider.registerPath(apiEndpoint + '/users.json');
+  AuthProvider.loginPath(apiEndpoint + '/users/sign_in.json');
+   AuthProvider.logoutPath(apiEndpoint + '/users/sign_out.json');
+  AuthProvider.logoutPath(apiEndpoint + '/users/sign_out_post.json');
   AuthProvider.logoutMethod('POST');
 });
 

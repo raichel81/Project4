@@ -5,12 +5,12 @@
             <div class="card">
               <div class="well">
                 <div class="card-block">
-                  <h4 class="card-title">{{builder.name}}</h4>
+                  <h3 class="card-title" ng-show="isLoggedIn()">{{builder.name}}</h3>
                   <p class="card-text">
-                    <li>Location: {{builder.location}}</li>
-                    <li>Shipping Options: {{builder.ship}}</li>
+                    <h4>Location: {{builder.location}}</h4>
+                    <h4>Shipping Options: {{builder.ship}}</h4>
                   </p>
-                  <li ng-class="{ active: isActive('/login')}"><a href="#/login" ng-hide="isLoggedIn()" class="btn btn-primary">Sign in to see contact info</a></li>
+                  <a href="#/login" ng-hide="isLoggedIn()" class="btn btn-primary">Sign in to see contact info</a>
                 </div>
               </div>
             </div>  

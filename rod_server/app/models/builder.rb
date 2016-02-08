@@ -19,4 +19,8 @@ class Builder < ActiveRecord::Base
   def image_url
     image.url(:medium)
   end
+
+  def email
+    user.email
+  end
 end

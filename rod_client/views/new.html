@@ -20,10 +20,6 @@
         <input type="bio" class="form-control" id="bio" placeholder="I had a friend once, he did some acid, tried to marry me and everyone in the room. He was sorta loving, kinda caring, kind that tried to fuck me and my laz-e-boy" ng-model="builder.bio">
       </div>
       <div class="form-group">
-        <label for="location">Location</label>
-        <input type="location" class="form-control" id="location" placeholder="eg Xanadu, Mongolia" ng-model="builder.location">
-      </div>
-      <div class="form-group">
         <label for="minprice">Minimum Price</label>
         <input type="minprice" class="form-control" id="minprice" placeholder="Cheapest pole you sell" ng-model="builder.minprice">
       </div>
@@ -31,24 +27,45 @@
         <label for="maxprice">Maximum Price</label>
         <input type="maxprice" class="form-control" id="maxprice" placeholder="Upper end price for your poles" ng-model="builder.maxprice">
       </div>
+
       <div class="form-group">
-        <label for="ship">Shipping</label>
-        <input type="ship" class="form-control" id="ship" placeholder="Do you ship?" ng-model="builder.ship">
-      </div>      
-      <div class="form-group">
-        <label for="rodtype">Type of Rod</label>
-        <input type="rodtype" class="form-control" id="rodtype" placeholder="eg Spinning, Fly and Controlled" ng-model="builder.rodtype">
+        <label for="location">Where are you located?</label>
+        <input type="location" class="form-control" id="location" placeholder="eg Washington" ng-model="builder.location">
       </div>
       <div class="form-group">
-        <label for="species">Fish Species</label>
-        <input type="species" class="form-control" id="species" placeholder="Salmon, Bass, Cod, etc." ng-model="builder.species">
+        <label for="ship">Do you offer shipping?</label><br/>
+        <label ng-repeat="ship in ships">
+          <input type="checkbox" checklist-model="builder.ship" checklist-value="ship"> {{ship}}
+        </label>    
+      </div> 
+      <div class="form-group">
+        <label for="rodtype">Types of Rods</label>
+        <label ng-repeat="rodtype in rodtypes">
+          <input type="checkbox" checklist-model="builder.rodtype" checklist-value="rodtype"> {{rodtype}}
+        </label>
       </div>
       <div class="form-group">
-        <label for="poleblank">Pole Blank</label>
-        <input type="poleblank" class="form-control" id="poleblank" placeholder="eg, Bass-Master 5000, Engenix 2323" ng-model="builder.poleblank">
+        <div class="saltwaterSpeciesChecks">
+          <label for="species">Saltwater Species</label>
+          <label ng-repeat="species in saltwaterSpecies">
+            <input type="checkbox" checklist-model="builder.species" checklist-value="species"> {{species}}
+          </label>
+        </div>
+        <div class="freshwaterSpeciesChecks">
+          <label for="species">Freshwater Species</label>
+          <label ng-repeat="species in freshwaterSpecies">
+            <input type="checkbox" checklist-model="builder.species" checklist-value="species"> {{species}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="poleblank">Blank Brand</label>
+        <label ng-repeat="poleblank in poleblanks">
+          <input type="checkbox" checklist-model="builder.poleblank" checklist-value="poleblank"> {{poleblank}}
+        </label>      
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>  <button type="submit" class="btn btn-warning">Edit</button> 
+      <button type="submit" class="btn btn-primary">Submit</button>   
 
     </form>
 

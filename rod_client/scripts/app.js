@@ -16,7 +16,8 @@ var app = angular.module('rodBrokerApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'checklist-model'
 ]);
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
@@ -29,10 +30,6 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
     .when('/about', {
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl'
-    })
-    .when('/builders', {
-      templateUrl: 'views/builders.html',
-      controller: 'BuildersCtrl'
     })
     .when('/new', {
       templateUrl: 'views/new.html',
@@ -54,7 +51,11 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl'
     })
-    .when('/show/:id', {
+    .when('/builders', {
+      templateUrl: 'views/builders.html',
+      controller: 'BuildersCtrl'
+    })
+    .when('/builders/:builderId', {
       templateUrl: 'views/show.html',
       controller: 'ShowCtrl'
     })

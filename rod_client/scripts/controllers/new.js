@@ -2,15 +2,96 @@
  
 angular.module('rodBrokerApp')
 .controller('NewCtrl', ['$scope', '$location', 'Builder', 'Auth', function($scope, $location, Builder, Auth) {
-  if (!Auth.isAuthenticated()) {
-    console.log('DENY');
-    $location.path('/login');
-    return;
-  }
+  // if (!Auth.isAuthenticated()) {
+  //   console.log('DENY');
+  //   $location.path('/login');
+  //   return;
+  // }
+
+  $scope.ships = [
+    'Not Available',
+    'Domestic',
+    'International'
+  ];
+
+  $scope.rodtypes = [
+    'Casting',
+    'Spinning', 
+    'Fly'
+  ];
+
+  $scope.saltwaterSpecies = [
+    'Amberjack',
+    'Bonefish',
+    'Calico Bass',
+    'Cobia',
+    'Dorado (Mahi)',
+    'Fluke',
+    'Halibut',
+    'Ling Cod',
+    'Marlin',
+    'Permit',
+    'Redfish',
+    'Rockfish',
+    'Roosterfish',
+    'Sailfish',
+    'Sea Bass',
+    'Sea Trout',
+    'Shark',
+    'Snapper',
+    'Snook',
+    'Striped Bass',
+    'Tuna',
+    'Wahoo',
+    'Yellowtail'
+  ];
+
+  $scope.freshwaterSpecies = [
+    'Bass Casting',
+    'Bass Spinning',
+    'Bass Swim Bait',
+    'Blue Gill',
+    'Carp',
+    'Catfish',
+    'Crappie',
+    'Kokanee',
+    'Kokanee Trolling',
+    'Musky',
+    'Panfish',
+    'Perch',
+    'Pike',
+    'Salmon (Northwest)',
+    'Salmon (Great',
+    'Lakes)',
+    'Steelhead',
+    'Sturgeon',
+    'Trout',
+    'Walleye Spinning'
+  ];
+
+  $scope.poleblanks = [
+    'Rainshadow',
+    'St. Croix',
+    'Liberty',
+    'Phenix',
+    'Century',
+    'North Fork Composites',
+    'Point Blank',
+    'Black Hole',
+    'Seeker',
+    'Rodgeeks',
+    'Pacific Bay'
+  ]
 
   $scope.createBuilder = function() {
-    Builder.save($scope.builder, function success(data) {
-      $location.path('/');
+    var builder = angular.copy($scope.builder);
+    builder.ship = builder.ship.join(', ');
+    builder.rodtype = builder.rodtype.join(', ');
+    builder.species = builder.species.join(', ');
+    builder.poleblank = builder.poleblank.join(', ');
+
+    Builder.save(builder, function success(newBuilder) {
+      $location.path('/builders/' + newBuilder.id);
     }, function error(data) {
       console.log(data);
     });

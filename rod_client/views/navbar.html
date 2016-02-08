@@ -1,5 +1,5 @@
 
-
+<div ng-controller="MainCtrl">
 <div class="header">
   <div class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
@@ -16,7 +16,7 @@
       
     </div>
 
-    <div class="collapse navbar-collapse" ng-controller="MainCtrl" id="js-navbar-collapse">
+    <div class="collapse navbar-collapse" id="js-navbar-collapse">
       <div>
         <ul class="nav navbar-nav">
           <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
@@ -40,3 +40,34 @@
   </div>
 </div>
     
+    <!-- /////// TO DO - Featured Ad ///////////   -->
+
+    <div class="well">
+    <p>Featured Ad</p>
+    </div>
+
+    <!-- ////////// Become a builder /////////// -->
+
+     <ul><a href="#/builders/new" ng-hide="isLoggedIn()" class="btn btn-primary">Become a Builder</a></ul>
+     <ul><a ng-click="showMyProfile()" ng-show="isLoggedIn()" class="btn btn-success">My Profile</a></ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

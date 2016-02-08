@@ -20,7 +20,7 @@ var app = angular.module('rodBrokerApp', [
   'checklist-model'
 ]);
 
-const apiEndpoint = "https://rod-broker-server.herokuapp.com/api";
+const apiEndpoint = "http://localhost:3000/api";
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
   $httpProvider.defaults.withCredentials = true;

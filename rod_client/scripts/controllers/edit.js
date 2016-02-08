@@ -1,7 +1,7 @@
 'use strict';
  
 angular.module('rodBrokerApp')
-.controller('EditCtrl', ['$scope', '$location', '$routeParams', 'Builder', 'Auth', function($scope, $location, $routeParams, Builder, Auth) {
+.controller('EditCtrl', ['$scope', '$location', '$routeParams', 'Builder', 'Auth', 'Upload', function($scope, $location, $routeParams, Builder, Auth, Upload) {
   // if (!Auth.isAuthenticated()) {
   //   console.log('DENY');
   //   $location.path('/login');
@@ -17,6 +17,27 @@ angular.module('rodBrokerApp')
       $scope.builder.ship = $scope.builder.ship.split(', ');
      })
   }
+
+  // Upload Picture on file select or drop
+  $scope.upload = function (file) {
+    Upload.upload({
+      url: apiEndpoint + '/builders/' + $scope.builder.id + '.json',
+      method: 'PUT',
+      headers: { 'Content-Type': false },
+      fields: {
+        'builder[image]': file
+      },
+      file: file,
+      sendFieldsAs: 'json'
+    }).then(function (resp) {
+      console.log('Success ' + resp.config.file.name + 'uploaded. Response: ' + resp.data);
+    }, function (resp) {
+      console.log('Error status: ' + resp.status);
+    }, function (evt) {
+      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+      console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+    });
+  };
 
   $scope.ships = [
     'Not Available',

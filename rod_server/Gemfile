@@ -29,6 +29,8 @@ gem 'puma'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'paperclip'
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'

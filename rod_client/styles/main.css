@@ -46,6 +46,30 @@ footer {
   clear: both;
 }
 
+#newBuilder h3 {
+  text-decoration: underline;
+}
+
+.builderCheckbox {
+  margin-right: 10px;
+}
+
+.species {
+  overflow: auto;
+}
+
+.saltwaterSpeciesChecks {
+  display: inline-block;
+  float: left;
+  max-width: 325px;
+  padding-right: 10px;
+}
+
+.freshwaterSpeciesChecks {
+  display: inline-block;
+  float: left;
+  max-width: 325px;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

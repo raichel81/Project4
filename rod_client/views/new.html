@@ -4,59 +4,54 @@
      <form ng-submit="createBuilder()">
 
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="name" class="form-control" id="name" placeholder="eg Dick Rodman" ng-model="builder.name">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone number</label>
-        <input type="phone" class="form-control" id="phone" placeholder="217.419.6564" ng-model="builder.phone">
-      </div>
-      <div class="form-group">
-        <label for="bio">Your autobiography</label>
-        <input type="bio" class="form-control" id="bio" placeholder="I had a friend once, he did some acid, tried to marry me and everyone in the room. He was sorta loving, kinda caring, kind that tried to fuck me and my laz-e-boy" ng-model="builder.bio">
-      </div>
-      <div class="form-group">
-        <label for="minprice">Minimum Price</label>
-        <input type="minprice" class="form-control" id="minprice" placeholder="Cheapest pole you sell" ng-model="builder.minprice">
-      </div>
-      <div class="form-group">
-        <label for="maxprice">Maximum Price</label>
-        <input type="maxprice" class="form-control" id="maxprice" placeholder="Upper end price for your poles" ng-model="builder.maxprice">
-      </div>
-
-      <div class="form-group">
-        <label for="location">Where are you located?</label>
+        <h4><label for="name">Name</label></h4>
+        <input type="name" class="form-control" id="name" placeholder="Enter your full name" ng-model="builder.name">
+     
+        <h4><label for="phone">Phone number</label></h4>
+        <input type="phone" class="form-control" id="phone" placeholder="(555)555-5555" ng-model="builder.phone">
+      
+        <h4><label for="bio">A little bit about you</label></h4>
+        <input type="bio" class="form-control" id="bio" placeholder="What is your background, specialties, other interests?" ng-model="builder.bio">
+    
+        <h4><label for="minprice">Minimum Price</label></h4>
+        <input type="minprice" class="form-control" id="minprice" placeholder="Lowest end of your price range" ng-model="builder.minprice">
+      
+        <h4><label for="maxprice">Maximum Price</label></h4>
+        <input type="maxprice" class="form-control" id="maxprice" placeholder="Upper end of your price range" ng-model="builder.maxprice">
+      
+        <h4><label for="location">Where are you located?</label></h4>
         <input type="location" class="form-control" id="location" placeholder="eg Washington" ng-model="builder.location">
-      </div>
-      <div class="form-group">
-        <label for="ship">Do you offer shipping?</label><br/>
-        <label ng-repeat="ship in ships">
+    
+        <h3>Click all that apply below</h3>
+        <h4><label for="ship">Do you offer shipping?</label></h4>
+        <label class="builderCheckbox" ng-repeat="ship in ships">
           <input type="checkbox" checklist-model="builder.ship" checklist-value="ship"> {{ship}}
-        </label>    
-      </div> 
-      <div class="form-group">
-        <label for="rodtype">Types of Rods</label>
-        <label ng-repeat="rodtype in rodtypes">
+        </label>   
+        <br/> 
+     
+      
+        <h4><label for="rodtype">Types of Rods:</label></h4>
+        <label class="builderCheckbox" ng-repeat="rodtype in rodtypes">
           <input type="checkbox" checklist-model="builder.rodtype" checklist-value="rodtype"> {{rodtype}}
         </label>
-      </div>
-      <div class="form-group">
-        <div class="saltwaterSpeciesChecks">
-          <label for="species">Saltwater Species</label>
-          <label ng-repeat="species in saltwaterSpecies">
-            <input type="checkbox" checklist-model="builder.species" checklist-value="species"> {{species}}
-          </label>
+    
+        <div class="species">
+          <div class="saltwaterSpeciesChecks">
+             <h4><label for="species">Saltwater Species:</label></h4>
+            <label class="builderCheckbox" ng-repeat="species in saltwaterSpecies">
+              <input type="checkbox" checklist-model="builder.species" checklist-value="species"> {{species}}
+            </label>
+          </div>
+          <div class="freshwaterSpeciesChecks">
+             <h4><label for="species">Freshwater Species:</label></h4>
+            <label class="builderCheckbox" ng-repeat="species in freshwaterSpecies">
+              <input type="checkbox" checklist-model="builder.species" checklist-value="species"> {{species}}
+            </label>
+          </div>
         </div>
-        <div class="freshwaterSpeciesChecks">
-          <label for="species">Freshwater Species</label>
-          <label ng-repeat="species in freshwaterSpecies">
-            <input type="checkbox" checklist-model="builder.species" checklist-value="species"> {{species}}
-          </label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="poleblank">Blank Brand</label>
-        <label ng-repeat="poleblank in poleblanks">
+      
+        <h4><label for="poleblank">Blank Brand:</label></h4>
+        <label class="builderCheckbox" ng-repeat="poleblank in poleblanks">
           <input type="checkbox" checklist-model="builder.poleblank" checklist-value="poleblank"> {{poleblank}}
         </label>      
       </div>

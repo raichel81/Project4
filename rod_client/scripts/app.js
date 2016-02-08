@@ -31,10 +31,7 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl'
     })
-    .when('/new', {
-      templateUrl: 'views/new.html',
-      controller: 'NewCtrl'
-    })
+
     .when('/results', {
       templateUrl: 'views/results.html',
       controller: 'ResultsCtrl'
@@ -55,9 +52,17 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
       templateUrl: 'views/builders.html',
       controller: 'BuildersCtrl'
     })
+    .when('/builders/new', {
+      templateUrl: 'views/edit.html',
+      controller: 'EditCtrl'
+    })
     .when('/builders/:builderId', {
       templateUrl: 'views/show.html',
       controller: 'ShowCtrl'
+    })
+    .when('/builders/edit/:builderId', {
+      templateUrl: 'views/edit.html',
+      controller: 'EditCtrl'
     })
     .otherwise({
       templateUrl:  '/404.html'

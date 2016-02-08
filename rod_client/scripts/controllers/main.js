@@ -34,6 +34,7 @@ angular.module('rodBrokerApp')
     }
   };
 
+
   $scope.$on('devise:new-session', function(event, currentUser) {
     setCurrentUser(currentUser);
   });

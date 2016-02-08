@@ -55,6 +55,10 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
       templateUrl: 'views/builders.html',
       controller: 'BuildersCtrl'
     })
+    .when('/builders/q=:searchQuery', {
+      templateUrl: 'views/builders.html',
+      controller: 'ResultsCtrl'
+    })
     .when('/builders/:builderId', {
       templateUrl: 'views/show.html',
       controller: 'ShowCtrl'

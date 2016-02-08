@@ -13,9 +13,11 @@
       <div class="well">
         <h2>{{builder.name}}</h2>
         <p>{{builder.bio}}</p>
-        <h3>Contact info</h3>
-        <h4>{{builder.phone}}<br/>
-            {{builder.email}}</h4><br/>
+        <div ng-show="isLoggedIn()">
+          <h3>Contact info</h3>
+            <h4>{{builder.phone}}<br/>
+             {{builder.email}}</h4><br/>
+        </div>
         <h5>Located in: {{builder.location}}</h5>
         <h5>Ships to: {{builder.ship}}</h5>
 
@@ -41,21 +43,3 @@
     </uib-carousel>
   </div>
 
-  <!-- 
-  <div class="row">
-    <div class="col-md-6">
-      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
-      <button type="button" class="btn btn-info" ng-click="randomize()">Randomize slides</button>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="noWrapSlides">
-          Disable Slide Looping
-        </label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
-      <br />Enter a negative number or 0 to stop the interval.
-    </div>
-  </div>
-</div> -->

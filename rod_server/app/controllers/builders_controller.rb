@@ -15,6 +15,11 @@ class BuildersController < ApplicationController
   def show
   end
 
+  def search
+    @builders = Builder.search params[:data][:query]
+    render json: @builders.as_json
+  end
+
   # GET /groups/new
   def new
     @builder = Builder.new

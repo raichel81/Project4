@@ -10,6 +10,7 @@
 angular.module('rodBrokerApp')
 .controller('MainCtrl', ['$scope', '$location', 'Auth', function($scope, $location, Auth) {
   $scope.currentPath = $location.path();
+  $scope.searchQuery = '';
 
   $scope.isActive = function (viewLocation) { 
       return viewLocation === $location.path();
@@ -22,6 +23,8 @@ angular.module('rodBrokerApp')
       // An error occurred logging out.
     });
   };
+
+
 
   $scope.$on('devise:new-session', function(event, currentUser) {
     setCurrentUser(currentUser);

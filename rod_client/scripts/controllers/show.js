@@ -1,7 +1,7 @@
 'use strict';
  
 angular.module('rodBrokerApp')
-  .controller('ShowCtrl', ['$scope', '$routeParams', 'Builder', 'Auth', function ($scope, $routeParams, Builder, Auth) {
+  .controller('ShowCtrl', ['$scope', '$location', '$routeParams', 'Builder', 'Auth', function ($scope, $location, $routeParams, Builder, Auth) {
 
     $scope.builder = Builder.get({ id: $routeParams.builderId });
 

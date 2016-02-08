@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208012055) do
+ActiveRecord::Schema.define(version: 20160208034149) do
 
   create_table "builders", force: :cascade do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160208012055) do
     t.string   "location"
     t.float    "minprice"
     t.float    "maxprice"
-    t.boolean  "ship"
+    t.string   "ship"
     t.string   "rodtype"
     t.string   "species"
     t.string   "poleblank"

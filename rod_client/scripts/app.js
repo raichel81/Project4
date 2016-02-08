@@ -82,7 +82,7 @@ app.factory('Group', ['$resource', function($resource) {
 }]);
 app.factory('Builder', ['$resource', function($resource) {
   return $resource(apiEndpoint + '/builders/:id.json', null, {
-    // 'update': { method:'PUT' }
+    'update': { method:'PUT' }
   })
 }]);
 app.factory('Pole', ['$resource', function($resource) {
@@ -94,7 +94,7 @@ app.factory('Pole', ['$resource', function($resource) {
 app.config(function(AuthProvider) {
   AuthProvider.registerPath(apiEndpoint + '/users.json');
   AuthProvider.loginPath(apiEndpoint + '/users/sign_in.json');
-   AuthProvider.logoutPath(apiEndpoint + '/users/sign_out.json');
+  AuthProvider.logoutPath(apiEndpoint + '/users/sign_out.json');
   AuthProvider.logoutPath(apiEndpoint + '/users/sign_out_post.json');
   AuthProvider.logoutMethod('POST');
 });

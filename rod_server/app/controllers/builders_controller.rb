@@ -52,7 +52,7 @@ class BuildersController < ApplicationController
   # PATCH/PUT /groups/1.json
   def update
     respond_to do |format|
-      if @builder.update(builder)
+      if @builder.update builder_params
         format.html { redirect_to @builder, notice: 'Builder was successfully updated.' }
         format.json { render :show, status: :ok, location: @builder }
       else

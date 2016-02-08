@@ -2,11 +2,11 @@
  
 angular.module('rodBrokerApp')
 .controller('EditCtrl', ['$scope', '$location', '$routeParams', 'Builder', 'Auth', 'Upload', function($scope, $location, $routeParams, Builder, Auth, Upload) {
-  // if (!Auth.isAuthenticated()) {
-  //   console.log('DENY');
-  //   $location.path('/login');
-  //   return;
-  // }
+  if (!Auth.isAuthenticated()) {
+    console.log('DENY');
+    $location.path('/login');
+    return;
+  }
 
   if($routeParams.builderId) {
     Builder.get({ id: $routeParams.builderId }, function(builder) {

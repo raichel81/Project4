@@ -9,6 +9,10 @@ angular.module('rodBrokerApp')
     poleblank: []
   };
 
+  $scope.toggleAdvancedSearch = function() {
+    $scope.advancedSearch = !$scope.advancedSearch;
+  };
+
   $scope.search = function() {
     $location.path('/builders/q=' + $scope.searchQuery);
   };

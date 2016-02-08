@@ -101,11 +101,11 @@ app.config(function(AuthProvider) {
   AuthProvider.logoutMethod('POST');
 });
 
-
-// .config(['$httpProvider', function($httpProvider) {
-//   $httpProvider.interceptors.push('AuthInterceptor');
-// }])
 app.run(['$rootScope', 'Auth', function($rootScope, Auth) {
+  Auth.currentUser().then(function(user) {
+    $rootScope.currentUser = user;
+  });
+
   $rootScope.isLoggedIn = function() {
     return Auth.isAuthenticated();
   }

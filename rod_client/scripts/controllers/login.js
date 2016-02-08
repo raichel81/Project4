@@ -7,13 +7,11 @@ angular.module('rodBrokerApp')
   };
 
   $scope.login = function() {
-
-        Auth.login($scope.user).then(function(user) {
-          $location.path('/');
-console.log(user); // => {id: 1, ect: '...'}
-        }, function(error) {
-            // Authentication failed...
-        });
+    Auth.login($scope.user).then(function(user) {
+      $location.path('/');
+    }, function(error) {
+        // Authentication failed...
+    });
   }
 }]);
 

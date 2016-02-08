@@ -1,6 +1,5 @@
 'use strict';
  
 angular.module('rodBrokerApp')
-  .controller('AboutCtrl', ['$scope', 'About', function ($scope, About) {
-    $scope.about = About.query();
+  .controller('AboutCtrl', ['$scope', function ($scope) {
   }]);

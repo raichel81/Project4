@@ -37,6 +37,8 @@ class BuildersController < ApplicationController
 
     respond_to do |format|
       if @builder.save
+        current_user.builder = @builder
+        current_user.save!
         format.html { redirect_to @builder, notice: 'Builder was successfully created.' }
         format.json { render :show, status: :created, location: @builder }
       else

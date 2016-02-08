@@ -31,9 +31,15 @@
       <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" dismiss-on-timeout="5000">
         {{alert.msg}}
       </uib-alert>
-           <div class="well">Featured Ad
-        </div>
-    <!-- ///// -->
+
+      <!-- ////////// Become a builder /////////// -->
+
+    <div class="well">
+
+     <ul ng-class="{ active: isActive('/login')}"><a href="#/login" ng-hide="isLoggedIn()" class="btn btn-primary">Sign in to see contact info</a></ul>
+
+    </div>
+    <!-- //////main page//// -->
       <div ng-view=""></div>
       
     </div>
@@ -66,7 +72,7 @@
     <script src="scripts/controllers/carousel.js"></script>
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/builders.js"></script>
-    <script src="scripts/controllers/new.js"></script>
+    <script src="scripts/controllers/edit.js"></script>
     <script src="scripts/controllers/groups.js"></script>
     <script src="scripts/controllers/results.js"></script>
     <script src="scripts/controllers/show.js"></script>

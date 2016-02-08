@@ -18,7 +18,7 @@
         <div ng-show="isLoggedIn()">
           <h3>Contact info</h3>
             <h4>{{builder.phone}}<br/>
-             {{builder.email}}</h4><br/>
+             <a href="mailto:{{builder.email}}">{{builder.email}}</a></h4><br/>
         </div>
         <h5>Located in: {{builder.location}}</h5>
         <h5>Ships to: {{builder.ship}}</h5>

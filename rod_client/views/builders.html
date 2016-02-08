@@ -9,6 +9,28 @@
                 <div class="card-block">
                   <h4 class="card-title">{{builder.name}}</h4>
                   <p class="card-text">
+                    <li>Location: {{builder.location}}</li>
+                    <li>Shipping Options: {{builder.ship}}</li>
+                  </p>
+                  <li ng-class="{ active: isActive('/login')}"><a href="#/login" ng-hide="isLoggedIn()" class="btn btn-primary">Sign in to see contact info</a></li>
+                </div>
+              </div>
+            </div>  
+          </div>
+      </div>
+   </div>
+</section>
+
+  
+
+          <!-- <a href="/#/builders/{{builder.id}}" class="btn btn-primary">Sign in to see contact info</a> -->
+
+<!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
+
+
+<!-- 
+
+
                     <li>Email: {{builder.email}}</li>
                     <li>Phone # {{builder.phone}}</li>
                     <li>Bio: {{builder.bio}}</li>
@@ -21,12 +43,4 @@
                     <li><strong>Blank Types: </strong>{{builder.poleblank}}</li>
                   </p>
                   <a href="/#/builders/{{builder.id}}" class="btn btn-primary">Builder Profile</a>
-                </div>
-              </div>
-            </div>  
-          </div>
-      </div>
-   </div>
-</section>
-
-<!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
+ -->

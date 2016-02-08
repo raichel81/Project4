@@ -21,8 +21,10 @@ var app = angular.module('rodBrokerApp', [
   'ngFileUpload'
 ]);
 
-const apiEndpoint = "http://localhost:3000/api";
-const rootEndpoint = "http://localhost:3000";
+// const apiEndpoint = "http://localhost:3000/api";
+// const rootEndpoint = "http://localhost:3000";
+const apiEndpoint = "https://rod-broker-server.herokuapp.com/api";
+const rootEndpoint = "https://rod-broker-server.herokuapp.com/";
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
   $httpProvider.defaults.withCredentials = true;

@@ -1,4 +1,4 @@
 json.array!(@builders) do |builder|
-  json.extract! builder, :id, :name, :email, :phone, :bio, :location, :minprice, :maxprice, :ship, :rodtype, :species, :poleblank
+  json.extract! builder, :id, :name, :phone, :bio, :location, :minprice, :maxprice, :ship, :rodtype, :species, :poleblank, :user_id
   json.url builder_url(builder, format: :json)
 end

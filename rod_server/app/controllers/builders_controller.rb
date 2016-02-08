@@ -73,6 +73,6 @@ class BuildersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def builder_params
-      params.require(:builder).permit(:name, :email, :phone, :bio, :location, :minprice, :maxprice, :ship, :rodtype, :species, :poleblank)
+      params.require(:builder).permit(:name, :phone, :bio, :location, :minprice, :maxprice, :ship, :rodtype, :species, :poleblank)
     end
 end

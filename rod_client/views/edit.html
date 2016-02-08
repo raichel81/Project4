@@ -23,6 +23,12 @@
         <input type="location" class="form-control" id="location" placeholder="eg Washington" ng-model="builder.location" required>
     
         <div ng-include="'views/builderChecks.html'"></div>
+
+        <p>
+          <input id="file-input" type="file" ngf-select="upload($file)" ng-model="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" ngf-min-height="100"> 
+        </p>
+      </div>
+
       <button type="submit" class="btn btn-primary">Submit</button>   
     </form>
 

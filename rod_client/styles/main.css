@@ -50,6 +50,10 @@ footer {
   text-decoration: underline;
 }
 
+.builderImage {
+  width: 100%;
+}
+
 .builderCheckbox {
   margin-right: 10px;
 }

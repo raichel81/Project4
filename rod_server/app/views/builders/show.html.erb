@@ -12,6 +12,7 @@
   <%= @builder.rodtype %>
   <%= @builder.species %>
   <%= @builder.poleblank %>
+  <%= link_to image_tag(@post.image.url(:med)), @post.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_builder_path(@builder) %> |

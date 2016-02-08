@@ -17,10 +17,12 @@ var app = angular.module('rodBrokerApp', [
   'ngSanitize',
   'ngTouch',
   'ui.bootstrap',
-  'checklist-model'
+  'checklist-model',
+  'ngFileUpload'
 ]);
 
 const apiEndpoint = "http://localhost:3000/api";
+const rootEndpoint = "http://localhost:3000";
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
   $httpProvider.defaults.withCredentials = true;

@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('rodBrokerApp')
-  .controller('ResultsCtrl', ['$scope', '$routeParams', '$http', 'Builder', function ($scope, $routeParams, $http, Builder) {
+  .controller('ResultsCtrl', ['$scope', '$location', '$routeParams', '$http', 'Builder', function ($scope, $location, $routeParams, $http, Builder) {
     $scope.builders = [];
 
     var searchQuery = $routeParams.searchQuery;
-    $http.post('http://localhost:3000/api/search', {
+    $http.post(apiEndpoint + '/search', {
       data: {
         query: searchQuery
       }
@@ -15,4 +15,8 @@ angular.module('rodBrokerApp')
     }, function errorCallback(response) {
 
     });
+
+    $scope.showBuilder = function(builderId) {
+      $location.path('/builders/' + builderId);
+    }
   }]);

@@ -1,0 +1,32 @@
+ <h3>Click all that apply below</h3>
+  <h4><label for="ship">Do you offer shipping?</label></h4>
+  <label class="builderCheckbox" ng-repeat="ship in ships">
+    <input type="checkbox" checklist-model="builder.ship" checklist-change="boxChecked()" checklist-value="ship"> {{ship}}
+  </label>   
+  <br/> 
+
+  <h4><label for="rodtype">Types of Rods:</label></h4>
+  <label class="builderCheckbox" ng-repeat="rodtype in rodtypes">
+    <input type="checkbox" checklist-model="builder.rodtype" checklist-change="boxChecked()" checklist-value="rodtype"> {{rodtype}}
+  </label>
+
+  <div class="species">
+    <div class="saltwaterSpeciesChecks">
+       <h4><label for="species">Saltwater Species:</label></h4>
+      <label class="builderCheckbox" ng-repeat="species in saltwaterSpecies">
+        <input type="checkbox" checklist-model="builder.species" checklist-change="boxChecked()" checklist-value="species"> {{species}}
+      </label>
+    </div>
+    <div class="freshwaterSpeciesChecks">
+       <h4><label for="species">Freshwater Species:</label></h4>
+      <label class="builderCheckbox" ng-repeat="species in freshwaterSpecies">
+        <input type="checkbox" checklist-model="builder.species" checklist-change="boxChecked()" checklist-value="species"> {{species}}
+      </label>
+    </div>
+  </div>
+
+  <h4><label for="poleblank">Blank Brand:</label></h4>
+  <label class="builderCheckbox" ng-repeat="poleblank in poleblanks">
+    <input type="checkbox" checklist-model="builder.poleblank" checklist-change="boxChecked()" checklist-value="poleblank"> {{poleblank}}
+  </label>      
+</div>

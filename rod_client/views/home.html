@@ -6,7 +6,10 @@
       <div class="form-group">
         <form>
           <input type="text" placeholder="By Fish, Reel Type or Rod Blank" class="form-control" id="search" ng-model="searchQuery">
-          <button type="submit" class="btn btn-primary" ng-click="search()">Search!</button>   
+          <button type="submit" class="btn btn-primary" ng-click="search()">Search!</button>
+          <a href="" ng-click="advancedSearch=true">Advanced Search</a>
+
+          <div ng-show="advancedSearch" ng-include="'views/builderChecks.html'"></div>
         </form>
       </div>
             

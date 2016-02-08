@@ -6,6 +6,8 @@
       <div class="form-group">
         <h4><label for="name">Name</label></h4>
         <input type="name" class="form-control" id="name" placeholder="Enter your full name" ng-model="builder.name" required>
+        <h4><label for="file">Upload a profile image</label></h4>
+        <input id="file-input" type="file" ngf-select="upload($file)" ng-model="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" ngf-min-height="100"> 
      
         <h4><label for="phone">Phone number</label></h4>
         <input type="phone" class="form-control" id="phone" placeholder="(555)555-5555" ng-model="builder.phone">
@@ -23,10 +25,6 @@
         <input type="location" class="form-control" id="location" placeholder="eg Washington" ng-model="builder.location" required>
     
         <div ng-include="'views/builderChecks.html'"></div>
-
-        <p>
-          <input id="file-input" type="file" ngf-select="upload($file)" ng-model="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" ngf-min-height="100"> 
-        </p>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>   

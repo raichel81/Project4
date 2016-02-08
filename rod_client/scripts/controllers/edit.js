@@ -100,6 +100,7 @@ angular.module('rodBrokerApp')
     builder.poleblank = builder.poleblank.join(', ');
 
     Builder.save(builder, function success(newBuilder) {
+      Auth._currentUser.builder_id = newBuilder.id;
       $location.path('/builders/' + newBuilder.id);
     }, function error(data) {
       console.log(data);

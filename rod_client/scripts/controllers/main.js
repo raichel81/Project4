@@ -25,9 +25,13 @@ angular.module('rodBrokerApp')
   };
 
   $scope.showMyProfile = function() {
-     console.log("Hello")
-    $location.path('/builders/' + Auth._currentUser.builder_id);
-   
+    $location.path('/builders/' + Auth._currentUser.builder_id); 
+  };
+
+  $scope.noProfile = function() {
+    if(Auth._currentUser) {
+      return !Auth._currentUser.builder_id;
+    }
   };
 
   $scope.$on('devise:new-session', function(event, currentUser) {

@@ -1,21 +1,32 @@
 
-<div class="well">
 
+<section id="results" class="results-section">
+     <div class='col-sm-6 col-md-6 col-lg-6' ng-repeat="builder in builders">
+        <div class="card-deck-wrapper">
+          <div class="card-deck">
+            <div class="card">
+              <div class="well">
+                <div class="card-block">
+                  <h4 class="card-title">{{builder.name}}</h4>
+                  <p class="card-text">
+                    <li>Email: {{builder.email}}</li>
+                    <li>Phone # {{builder.phone}}</li>
+                    <li>Bio: {{builder.bio}}</li>
+                    <li>Location: {{builder.location}}</li>
+                    <li>Minimum Price: {{builder.minprice}}</li>
+                    <li>Maximum Price: {{builder.maxprice}}</li>
+                    <li>Shipping Options: {{builder.ship}}</li>
+                    <li>Rod Types: {{builder.rodtype}}</li>
+                    <li>Species Types: {{builder.species}}</li>
+                    <li><strong>Blank Types: </strong>{{builder.poleblank}}</li>
+                  </p>
+                  <a href="/#/show/{{builder.id}}" class="btn btn-primary">Builder Profile</a>
+                </div>
+              </div>
+            </div>  
+          </div>
+      </div>
+   </div>
+</section>
 
-<h1>Builders Page</h1>
-
-<ul ng-repeat="builder in builders">
-  <li>{{builder.name}}</li>
-  <li>{{builder.email}}</li>
-  <li>{{builder.phone}}</li>
-  <li>{{builder.bio}}</li>
-  <li>{{builder.location}}</li>
-  <li>{{builder.minprice}}</li>
-  <li>{{builder.maxprice}}</li>
-  <li>{{builder.ship}}</li>
-  <li>{{builder.rodtype}}</li>
-  <li>{{builder.species}}</li>
-  <li>{{builder.poleblank}}</li>
-</ul>
-
-</div>
+<!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->

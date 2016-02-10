@@ -1,7 +1,7 @@
 # Rod Broker
 WDI05 Project 4
 
-<img src="http://i.imgur.com/Fuw3kLZ" alt="logo">  
+<img src="http://i.imgur.com/Fuw3kLZ.jpg" alt="logo">  
 
 ###About
 
